@@ -1,0 +1,54 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# All files
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Shell scripts - use shfmt with Google style
+[*.{sh,bash,zsh,fish}]
+[[shell]]
+max_line_length = 80 # Sets a maximum of 80 characters per line
+# shfmt options: -ci -bn
+# This aligns with Google Shell Style Guide
+# --language-dialect
+shell_variant = auto
+simplify = true
+switch_case_indent = true
+binary_next_line = true
+space_redirects = true
+keep_padding = true
+
+# Makefiles require tabs
+[Makefile]
+indent_style = tab
+
+[*.{make,mk}]
+indent_style = tab
+
+# YAML files commonly use 2 spaces
+[*.{yml,yaml}]
+indent_size = 2
+
+# Some languages prefer 4 spaces
+[*.{py,java,php,cs,cpp,c,h,hpp}]
+indent_size = 4
+
+# Go uses tabs by convention
+[*.go]
+indent_style = tab
+
+# Windows batch files should use CRLF
+[*.{bat,cmd}]
+end_of_line = crlf
+
+# Markdown may need trailing spaces for line breaks
+[*.md]
+trim_trailing_whitespace = false
